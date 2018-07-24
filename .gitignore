@@ -1,2 +1,4 @@
 .DS_Store
 /.ipynb_checkpoints
+convert_nb_frame.py
+query_result.csv
