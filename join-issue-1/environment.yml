@@ -1,0 +1,10 @@
+name: envname
+dependencies:
+- python
+- pandas
+- numpy
+- seaborn
+- matplotlib
+- plotly
+- pip
+- importlib 
