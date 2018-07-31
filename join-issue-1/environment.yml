@@ -1,0 +1,16 @@
+name: join-issue-1
+channels:
+  - conda-forge
+  - r
+dependencies:
+  - python
+  - numpy
+  - pandas
+  - numpy
+  - seaborn
+  - matplotlib.pyplot
+  - importlib
+  - IPython.display
+  - pip
+  - pip:
+    - plotly
