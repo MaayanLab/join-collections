@@ -16,7 +16,6 @@ dependencies:
   - pymysql
   - nbformat
   - nbconvert
-  - google-cloud
   - jupyter
   - jupyter_client
   - rpy2
