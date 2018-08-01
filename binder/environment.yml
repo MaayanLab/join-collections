@@ -1,0 +1,27 @@
+name: join-issue
+channels:
+  - conda-forge
+  - r
+dependencies:
+  - python
+  - pandas
+  - numpy
+  - seaborn
+  - matplotlib
+  - plotly
+  - pip
+  - Flask
+  - sqlalchemy
+  - flask-sqlalchemy
+  - pymysql
+  - nbformat
+  - nbconvert
+  - google-cloud
+  - jupyter
+  - jupyter_client
+  - rpy2
+  - h5py
+  - sklearn
+  - qgrid
+  - clustergrammer-widget
+  - matplotlib-venn
