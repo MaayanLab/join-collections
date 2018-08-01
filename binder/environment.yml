@@ -20,7 +20,8 @@ dependencies:
   - jupyter_client
   - rpy2
   - h5py
-  - sklearn
-  - qgrid
-  - clustergrammer-widget
-  - matplotlib-venn
+  - pip:  
+    - sklearn
+    - qgrid
+    - clustergrammer-widget
+    - matplotlib-venn
