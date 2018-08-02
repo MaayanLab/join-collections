@@ -3,3 +3,6 @@
 convert_nb_frame.py
 query_result.csv
 join-issue-1/.ipynb_checkpoints
+environment.yml
+install.R
+runtime.txt
