@@ -1,4 +1,5 @@
 FROM ubuntu:17.10
+
 MAINTAINER Denis Torre <denis.torre@mssm.com>
 
 RUN apt-get update && apt-get install -y python3
@@ -44,4 +45,3 @@ RUN cd /library; python3 download_libraries.py
 WORKDIR /notebooks
 
 ENTRYPOINT python3 /library/launch.py; jupyter notebook --ip=0.0.0.0 --port=8888 --allow-root --no-browser --notebook-dir='/notebooks' --NotebookApp.iopub_data_rate_limit=10000000000 --NotebookApp.token=
-©
