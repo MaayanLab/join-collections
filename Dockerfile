@@ -7,6 +7,8 @@ RUN apt-get update && apt-get install -y python3-pip
 RUN apt-get update && apt-get install -y python3-dev
 RUN apt-get update && apt-get install -y libmysqlclient-dev
 
+RUN pip install --no-cache-dir notebook==5.*
+
 RUN pip3 install numpy
 RUN pip3 install pandas
 RUN pip3 install Flask
@@ -38,3 +40,20 @@ RUN apt-get update && apt-get install -y wget
 
 RUN pip3 install matplotlib-venn
 
+ENV NB_USER jovyan
+ENV NB_UID 1000
+ENV HOME /home/${NB_USER}
+
+RUN adduser --disabled-password \
+    --gecos "Default user" \
+    --uid ${NB_UID} \
+    ${NB_USER}
+
+# Make sure the contents of our repo are in ${HOME}
+COPY . ${HOME}
+USER root
+RUN chown -R ${NB_UID} ${HOME}
+USER ${NB_USER}
+
+# Specify the default command to run
+CMD ["jupyter", "notebook", "--ip", "0.0.0.0"]
