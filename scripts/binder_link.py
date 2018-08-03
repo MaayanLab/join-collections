@@ -30,7 +30,7 @@ issue_number = 1
 engine = create_engine(os.environ['SQLALCHEMY_DATABASE_URI'])
 
 #query
-query = "SELECT n.id, n.title FROM notebook n WHERE n.issue_id_fk = %d;" %issue_number
+query = "SELECT n.id, n.title FROM notebook n WHERE n.collection_id_fk = %d;" %issue_number
 issue_number = str(issue_number)
 #read into dataframe
 df = pd.read_sql_query(query, engine)
@@ -40,7 +40,7 @@ titles = df['title'].tolist()
 new = list()
 for t in titles:
     t = urllib.parse.quote(t)
-    url = 'https://mybinder.org/v2/gh/maayanlab/join-issues/master?filepath=join-issue-' + issue_number + '%2F' + t + '.ipynb' 
+    url = 'https://mybinder.org/v2/gh/maayanlab/join-collections/master?filepath=join-issue-' + issue_number + '%2F' + t + '.ipynb' 
     new.append(url)
 
 #append to binder_url column
@@ -49,4 +49,4 @@ df['binder_url'] = new
 count = len(df)
 
 #Create csv, import using Sequel Pro or MySQLWorkbench 
-df.to_csv('issue/csv/to_database.csv')
+df.to_csv('csv/to_database.csv')

@@ -26,7 +26,9 @@ RUN pip3 install plotly
 
 RUN apt-get update && apt-get install --allow-unauthenticated -y r-base
 
-RUN pip3 install rpy2
+#dependencies for rpy2
+RUN pip3 install tzlocal
+RUN pip3 install rpy2 --update
 RUN pip3 install h5py
 RUN pip3 install sklearn
 RUN pip3 install qgrid
