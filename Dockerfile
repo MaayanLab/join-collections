@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y python3-pip
 RUN apt-get update && apt-get install -y python3-dev
 RUN apt-get update && apt-get install -y libmysqlclient-dev
 
-RUN pip install --no-cache-dir notebook==5.*
+RUN pip3 install --no-cache-dir notebook==5.*
 
 RUN pip3 install numpy
 RUN pip3 install pandas
