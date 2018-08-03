@@ -38,10 +38,3 @@ RUN apt-get update && apt-get install -y wget
 
 RUN pip3 install matplotlib-venn
 
-RUN mkdir /notebooks /library /download
-
-COPY . /library
-RUN cd /library; python3 download_libraries.py 
-WORKDIR /notebooks
-
-ENTRYPOINT python3 /library/launch.py; jupyter notebook --ip=0.0.0.0 --port=8888 --allow-root --no-browser --notebook-dir='/notebooks' --NotebookApp.iopub_data_rate_limit=10000000000 --NotebookApp.token=
