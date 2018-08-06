@@ -10,36 +10,36 @@ RUN apt-get update && apt-get install -y libmysqlclient-dev
 RUN pip3 install --no-cache-dir notebook==5.*
 
 #pip dependencies
-RUN pip3 install numpy
-RUN pip3 install pandas
-RUN pip3 install Flask
-RUN pip3 install sqlalchemy
-RUN pip3 install flask-sqlalchemy
-RUN pip3 install pymysql
-RUN pip3 install nbformat
-RUN pip3 install nbconvert
-RUN pip3 install google-cloud
-RUN pip3 install jupyter
-RUN pip3 install jupyter_client
-RUN pip3 install seaborn
-RUN pip3 install plotly
+RUN pip3 install numpy==1.14.2
+RUN pip3 install pandas==0.22.0
+RUN pip3 install Flask==0.12.2
+RUN pip3 install sqlalchemy==1.2.5
+RUN pip3 install flask-sqlalchemy==2.3.2
+RUN pip3 install pymysql==0.8.0
+RUN pip3 install nbformat==4.4.0
+RUN pip3 install nbconvert==5.3.1
+RUN pip3 install google-cloud==0.32.0
+RUN pip3 install jupyter==1.0.0
+RUN pip3 install jupyter_client==5.2.3
+RUN pip3 install seaborn==0.8.1
+RUN pip3 install plotly==2.5.0
 
 #r and python dependencies
 RUN apt-get update && apt-get install --allow-unauthenticated -y r-base
 #tzlocal needed for rpy2
 RUN pip3 install tzlocal 
-RUN pip3 install rpy2 
-RUN pip3 install h5py
-RUN pip3 install sklearn
-RUN pip3 install qgrid
-RUN pip3 install clustergrammer-widget
+RUN pip3 install rpy2==2.9.2
+RUN pip3 install h5py==2.7.1
+RUN pip3 install sklearn==0.0
+RUN pip3 install qgrid==1.0.2
+RUN pip3 install clustergrammer-widget==1.13.3
 #r
 RUN echo "r <- getOption('repos'); r['CRAN'] <- 'http://cran.us.r-project.org'; options(repos = r);" > ~/.Rprofile
 RUN Rscript -e 'source("https://bioconductor.org/biocLite.R"); biocLite("limma");'
 RUN Rscript -e 'source("https://bioconductor.org/biocLite.R"); biocLite("edgeR");'
 #wget
 RUN apt-get update && apt-get install -y wget
-RUN pip3 install matplotlib-venn
+RUN pip3 install matplotlib-venn==0.11.5
 
 #biojupies directories
 RUN mkdir /download; chmod 777 /download;
