@@ -42,6 +42,7 @@ RUN apt-get update && apt-get install -y wget
 
 RUN pip3 install matplotlib-venn
 
+RUN mkdir /download; chmod 777 /download;
 
 ENV NB_USER join-user
 ENV NB_UID 1000
