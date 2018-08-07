@@ -24,7 +24,7 @@ import pymysql
 pymysql.install_as_MySQLdb()
 
 #change for each issue
-issue_number = 2
+issue_number = 1
 
 #engine setup
 engine = create_engine(os.environ['SQLALCHEMY_DATABASE_URI'])

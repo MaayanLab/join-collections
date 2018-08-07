@@ -10,3 +10,6 @@ text.txt
 environment.yml
 /join-collection-1/.ipynb_checkpoints
 /join-collection-2/.ipynb_checkpoints
+/scripts/git_link.py
+/scripts/csv/to_database.csv
+scripts/csv/add.csv
