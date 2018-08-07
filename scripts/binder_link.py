@@ -24,7 +24,7 @@ import pymysql
 pymysql.install_as_MySQLdb()
 
 #change for each issue
-issue_number = 1
+issue_number = 2
 
 #engine setup
 engine = create_engine(os.environ['SQLALCHEMY_DATABASE_URI'])
@@ -40,7 +40,7 @@ titles = df['title'].tolist()
 new = list()
 for t in titles:
     t = urllib.parse.quote(t)
-    url = 'https://mybinder.org/v2/gh/maayanlab/join-collections/master?filepath=join-issue-' + issue_number + '%2F' + t + '.ipynb' 
+    url = 'https://mybinder.org/v2/gh/maayanlab/join-collections/master?filepath=join-collection-' + issue_number + '%2F' + t + '.ipynb' 
     new.append(url)
 
 #append to binder_url column
